@@ -8,26 +8,6 @@ const $ = s => document.querySelector(s);
       }, 700);
     }
 
-    // SVG Line Drawing sequence index setup
-    $$('.d').forEach((p, i) => {
-      p.setAttribute('pathLength', 1);
-      p.style.setProperty('--i', i);
-    });
-
-    // Append dynamic blueprint joint connection nodes
-    const sv = $('.sv');
-    if (sv) {
-      for (const x of [100, 200, 300, 400]) {
-        for (const y of [290, 200, 120]) {
-          const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-          c.setAttribute('cx', x);
-          c.setAttribute('cy', y);
-          c.setAttribute('r', 5);
-          sv.appendChild(c);
-        }
-      }
-    }
-
     // Sticky Navbar shadow on scroll
     const updateNavScroll = () => document.body.classList.toggle('s', window.scrollY > 30);
     window.addEventListener('scroll', updateNavScroll, { passive: true });

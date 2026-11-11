@@ -302,30 +302,29 @@
 
     /* Hero Section */
     .h {
-      background: 
-        linear-gradient(rgba(25,194,176,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(25,194,176,0.06) 1px, transparent 1px),
-        linear-gradient(180deg, #071626 0%, #0A1F33 60%, #0F2A47 100%);
-      background-size: 40px 40px, 40px 40px, auto;
+      background-image:
+        linear-gradient(90deg, rgba(6, 21, 36, 0.72) 0%, rgba(6, 21, 36, 0.48) 42%, rgba(6, 21, 36, 0.14) 100%),
+        linear-gradient(0deg, rgba(6, 21, 36, 0.32), transparent 48%),
+        url("assets/home-construction-background.jpg");
+      background-size: cover, cover, cover;
+      background-position: center, center, center 20%;
+      background-repeat: no-repeat;
       color: #FFFFFF;
       overflow: hidden;
-      padding: 80px 0 90px;
+      min-height: min(78vh, 820px);
+      padding: 92px 0 80px;
       position: relative;
-    }
-    .h::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 60px;
-      background: linear-gradient(transparent, var(--bg));
-      pointer-events: none;
+      display: flex;
+      align-items: center;
     }
     .h .w {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
+      grid-template-columns: 1fr;
+      gap: 0;
       align-items: center;
+      width: 100%;
     }
+    .h .w > div { max-width: 660px; }
     .tagline-pill {
       display: inline-flex;
       align-items: center;
@@ -388,45 +387,6 @@
       font-size: 0.84rem;
     }
     .hb-item svg { width: 18px; height: 18px; color: var(--teal); flex-shrink: 0; }
-
-    /* Hero SVG Blueprint */
-    .blueprint-card {
-      background: rgba(10, 31, 51, 0.75);
-      border: 1px solid rgba(25, 194, 176, 0.35);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(25, 194, 176, 0.05);
-      position: relative;
-    }
-    .blueprint-card::before {
-      content: "IS 456 / IS 1893 COMPLIANT • VENTURE CAD 2D MODEL";
-      position: absolute;
-      top: 14px;
-      left: 20px;
-      font: 600 0.68rem Sora, monospace;
-      color: var(--teal);
-      letter-spacing: 0.08em;
-      opacity: 0.85;
-    }
-    .sv { width: 100%; height: auto; max-height: 440px; margin-top: 14px; }
-    .sv path { fill: none; stroke: var(--teal); stroke-width: 2.4; stroke-linejoin: round; }
-    .sv .g { stroke: #FFFFFF; opacity: 0.25; }
-    .sv .dm { stroke: var(--or); stroke-width: 1.6; }
-    .sv text { fill: var(--or); font: 600 13px "IBM Plex Sans", monospace; }
-    .sv circle { fill: #071728; stroke: var(--teal); stroke-width: 2; }
-    
-    .js .d {
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      animation: dr 1.2s cubic-bezier(0.6, 0, 0.2, 1) forwards;
-      animation-delay: calc(var(--i) * 0.09s + 0.15s);
-    }
-    .js .sv text, .js .sv circle {
-      opacity: 0;
-      animation: fi 0.6s 2.6s forwards;
-    }
-    @keyframes dr { to { stroke-dashoffset: 0; } }
-    @keyframes fi { to { opacity: 1; } }
 
     /* Stats Bar */
     .st {
@@ -596,11 +556,12 @@
     .services-page-hero {
       padding: 72px 0 64px;
       color: #fff;
-      background:
-        linear-gradient(rgba(25,194,176,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(25,194,176,0.06) 1px, transparent 1px),
-        linear-gradient(180deg, #071626 0%, #0A1F33 100%);
-      background-size: 40px 40px, 40px 40px, auto;
+      background-image:
+        linear-gradient(90deg, rgba(6, 21, 36, 0.66) 0%, rgba(6, 21, 36, 0.42) 52%, rgba(6, 21, 36, 0.16) 100%),
+        url("assets/services-technical-background.jpg");
+      background-size: cover, cover;
+      background-position: center, center 48%;
+      background-repeat: no-repeat;
     }
     .services-page-hero .eyebrow { color: var(--teal); }
     .services-page-hero h1 {
@@ -623,6 +584,14 @@
         linear-gradient(90deg, rgba(25,194,176,0.06) 1px, transparent 1px),
         linear-gradient(180deg, #071626 0%, #0A1F33 100%);
       background-size: 40px 40px, 40px 40px, auto;
+    }
+    .projects-hero-image {
+      background-image:
+        linear-gradient(90deg, rgba(6, 21, 36, 0.66) 0%, rgba(6, 21, 36, 0.40) 52%, rgba(6, 21, 36, 0.12) 100%),
+        url("assets/projects-technical-background.jpg");
+      background-size: cover, cover;
+      background-position: center, center 30%;
+      background-repeat: no-repeat;
     }
     .projects-page-hero .eyebrow { color: var(--teal); }
     .projects-page-hero h1 {
@@ -1260,6 +1229,9 @@
       .about-audience-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 860px) {
+      .h { min-height: 74vh; }
+      .services-page-hero { background-position: center, 72% center; }
+      .projects-hero-image { background-position: center, right center; }
       .h .w { grid-template-columns: 1fr; }
       .g4 { grid-template-columns: repeat(2, 1fr); }
       .project-grid { grid-template-columns: 1fr; }
@@ -1288,6 +1260,11 @@
       .projects-contact { align-items: flex-start; flex-direction: column; }
     }
     @media (max-width: 580px) {
+      .h {
+        min-height: 78svh;
+        padding: 72px 0 56px;
+        background-position: center, center, left center;
+      }
       .bn { grid-template-columns: 1fr; }
       .g4 { grid-template-columns: 1fr; }
       .form-grid { grid-template-columns: 1fr; }
